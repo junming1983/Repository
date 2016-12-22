@@ -36,6 +36,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataModel\Product.cs" />
     <Compile Include="Interface\IProductGroupManager.cs" />
     <Compile Include="DataModel\ProductGroup.cs" />
     <Compile Include="DataModel\ProductSpecification.cs" />

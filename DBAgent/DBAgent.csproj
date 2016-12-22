@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductAgent.cs" />
     <Compile Include="ProductSpecificationAdapter.cs" />
     <Compile Include="ProductGroupAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
