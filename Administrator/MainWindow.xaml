@@ -1,0 +1,51 @@
+﻿<Window x:Class="Administrator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:DataContract="clr-namespace:DataContract;assembly=DataContract"
+        Title="MainWindow" Height="350" Width="525">
+  <Window.Resources>
+    <DataTemplate x:Key="GroupCellTemplate" DataType="{x:Type DataContract:ProductGroup}">
+      <TextBlock Text="{Binding Name}" />
+    </DataTemplate>
+    <DataTemplate x:Key="SpecificationCellTemplate" DataType="{x:Type DataContract:ProductSpecification}">
+      <TextBlock Text="{Binding Name}" />
+    </DataTemplate>
+  </Window.Resources>
+    <Grid>
+    <TabControl>
+      <TabItem x:Name="GroupManagerItem" Header="{StaticResource GroupManagerName}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Group Name" />
+            <ListBox ItemsSource="{Binding ProductGroups}" Grid.Row="1" ItemTemplate="{StaticResource GroupCellTemplate}" SelectedItem="{Binding SelectedProductGroup}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            <TextBlock Text="Custom GroupName" Grid.Row="2" HorizontalAlignment="Left" />
+            <TextBox Text="{Binding CustomGroupName}" Grid.Row="2" Margin="40,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="100"/>
+            <Button Command="{Binding AddProductGroupCommand}" Grid.Row="2"  Content="Add" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+          </Grid>
+          <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Group Name" />
+            <ListBox ItemsSource="{Binding ProductSpecifications}" Grid.Row="1" ItemTemplate="{StaticResource SpecificationCellTemplate}" />
+            <TextBlock Text="Custom GroupName" Grid.Row="2" HorizontalAlignment="Left" />
+            <TextBox Text="{Binding ProductSpecificationName}" Grid.Row="2" Margin="40,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="100"/>
+            <Button Command="{Binding AddProductSpecificationCommand}" Grid.Row="2"  Content="Add" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+          </Grid>
+        </Grid>
+      </TabItem>
+      <TabItem Header="{StaticResource UserManageName}"></TabItem>
+    </TabControl>
+    </Grid>
+</Window>
