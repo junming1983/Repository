@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Administrator", "Administrator\Administrator.csproj", "{22078510-4C79-44ED-98D6-4E26FFC8F911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductStoreMananement", "ProductStoreMananement\ProductStoreMananement.csproj", "{6026DF16-F1B5-470F-A134-D20F6B7008FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductStoreMananement", "ProductStoreManagement\ProductStoreManagement.csproj", "{6026DF16-F1B5-470F-A134-D20F6B7008FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBAgent", "DBAgent\DBAgent.csproj", "{13071C11-A23C-4965-98B0-380467A3A115}"
 EndProject
