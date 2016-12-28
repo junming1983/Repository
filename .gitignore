@@ -1,0 +1,16 @@
+Administrator/bin/
+Administrator/obj/
+DBAgent/bin/
+DBAgent/obj/
+DataContract/bin/
+DataContract/obj/
+DataProvider/bin/
+DataProvider/obj/
+Infrastructure/bin/
+Infrastructure/obj/
+ProductManagement/bin/
+ProductManagement/obj/
+ProductStoreManagement/bin/
+ProductStoreManagement/obj/
+ProductStoreMananement/bin/
+ProductStoreMananement/obj/
