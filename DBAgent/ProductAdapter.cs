@@ -14,12 +14,21 @@ namespace DBAgent
     private const string _groupTableName = "ProductGroup";
     private const string _specificationTableName = "ProductSpecification";
 
-    public static IEnumerable<Product> GetProducts(long groupId)
+    public static IEnumerable<Product> GetProductsByGroupId(long groupId)
     {
       string cmdText = string.Format("SELECT pd.Id, pd.Name, ps.Name, pg.Name FROM  {0} as pd " +
         "JOIN {1} as ps ON ps.Id = pd.SpecificationId " +
         "JOIN {2} as pg ON pg.Id = ps.GroupId " +
         "WHERE pd.GroupId = {3}", _productTableName, _specificationTableName, _groupTableName, groupId);
+      return ExecuateReader(cmdText);
+    }
+
+    public static IEnumerable<Product> GetProductsBySpecificationId(long specificationId)
+    {
+      string cmdText = string.Format("SELECT pd.Id, pd.Name, ps.Name, pg.Name FROM  {0} as pd " +
+        "JOIN {1} as ps ON ps.Id = pd.SpecificationId " +
+        "JOIN {2} as pg ON pg.Id = ps.GroupId " +
+        "WHERE pd.SpecificationId = {3}", _productTableName, _specificationTableName, _groupTableName, specificationId);
       return ExecuateReader(cmdText);
     }
 

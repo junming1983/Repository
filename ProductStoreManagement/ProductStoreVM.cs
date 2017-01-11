@@ -16,9 +16,25 @@ namespace ProductStoreMananement
     private ObservableCollection<ProductProfileVM> _availableProducts;
     private ProductProfileVM _selectedProduct;
     private ObservableCollection<ProductProfileVM> _candidateProducts;
+    private ProductGroup _selectedGroup;
+
+    private IProductGroupManager _productGroupManager;
+    private IProductSpecificationManager _productSpecificationManager;
     #endregion
 
     #region properties
+
+    public ProductGroup SelectedGroup
+    {
+      get { return _selectedGroup; }
+      set
+      { 
+        _selectedGroup = value;
+        OnPropertyChanged("SelectedGroup");
+        OnSelectedGroupChanged(value);
+      }
+    }
+
     public ObservableCollection<ProductGroup> Groups
     {
       get { return _groups; }
@@ -62,8 +78,11 @@ namespace ProductStoreMananement
     #endregion
 
     #region ctor
-    public ProductStoreVM()
+    public ProductStoreVM(IProductGroupManager productGroupManager, IProductSpecificationManager productSpecificationManager)
     {
+      _productGroupManager = productGroupManager;
+      _productSpecificationManager = productSpecificationManager;
+
       LoadAvailableProductsCommand = new DelegateCommand(OnLoadAvailableProducts);
       LoadGroupsCommand = new DelegateCommand(OnLoadGroups);
       AddToCandidateCommand = new DelegateCommand(OnAddToCandidate);
@@ -79,10 +98,24 @@ namespace ProductStoreMananement
     #endregion
 
     #region private methods
+    #region command handler
     private void OnLoadAvailableProducts(object arg) { }
     private void OnLoadGroups(object arg) { }
     private void OnAddToCandidate(object arg) { }
     private void OnRemoveFromCandidate(object arg) { }
+    #endregion
+
+    private void OnSelectedGroupChanged(ProductGroup group)
+    {
+      if(group.Id == -1)
+      {
+        
+      }
+      else
+      { }
+    }
+
+
     #endregion
   }
 }
