@@ -135,6 +135,8 @@ namespace Administrator
       if(_selectedProductGroup != null && !_productSpecifications.Any(t=>t.Name.ToLower() == newName))
       {
         _productSpecificationManager.CreateProductSpecification(new ProductSpecification() { GroupId = _selectedProductGroup.Id, Name = _productionSpecificationName.Trim()});
+
+        ProductSpecifications = new ObservableCollection<ProductSpecification>(_productSpecificationManager.GetProductSpecification(_selectedProductGroup.Id));
       }
     }
   }

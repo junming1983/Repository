@@ -8,12 +8,13 @@ namespace DBAgent
 {
   public class ProductGroupAdapter
   {
-    private static string _connectionString = "Data Source=MyDatabase.sqlite;Version=3;Password=Junming123";
+    //private static string _connectionString = "Data Source=MyDatabase.sqlite;Version=3;Password=Junming123";
+    private static string _connectionString = "Data Source=MyDatabase.sqlite";
     private static string _tableName = "ProductGroup";
 
     //public static void CreateDB()
     //{
-    //  SQLiteConnection.CreateFile("MyDatabase.db");
+    //  SQLiteConnection.CreateFile("MyDatabase.sqlite");
     //}
 
     //public static void CreateTable()
@@ -31,6 +32,7 @@ namespace DBAgent
     public static IEnumerable<ProductGroup> GetProductGroups()
     {
       List<ProductGroup> groups = new List<ProductGroup>();
+      
       using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
       {
         string cmdText = string.Format("SELECT * FROM '{0}'", _tableName);

@@ -25,7 +25,7 @@
               <RowDefinition Height="*" />
               <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <TextBlock Text="Group Name" />
+            <TextBlock Text="{StaticResource ProductGroupName}" />
             <ListBox ItemsSource="{Binding ProductGroups}" Grid.Row="1" ItemTemplate="{StaticResource GroupCellTemplate}" SelectedItem="{Binding SelectedProductGroup}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
             <TextBlock Text="Custom GroupName" Grid.Row="2" HorizontalAlignment="Left" />
             <TextBox Text="{Binding CustomGroupName}" Grid.Row="2" Margin="40,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="100"/>
@@ -37,7 +37,7 @@
               <RowDefinition Height="Auto" />
               <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <TextBlock Text="Group Name" />
+            <TextBlock Text="{StaticResource ProductTypeName}" />
             <ListBox ItemsSource="{Binding ProductSpecifications}" Grid.Row="1" ItemTemplate="{StaticResource SpecificationCellTemplate}" />
             <TextBlock Text="Custom GroupName" Grid.Row="2" HorizontalAlignment="Left" />
             <TextBox Text="{Binding ProductSpecificationName}" Grid.Row="2" Margin="40,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="100"/>
