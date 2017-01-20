@@ -5,4 +5,5 @@
   <sys:String x:Key="UserManageName">用户管理</sys:String>
   <sys:String x:Key="ProductGroupName">产品名称</sys:String>
   <sys:String x:Key="ProductTypeName">类型名称</sys:String>
+  <sys:String x:Key="NoProductSpecifications">没有发现可用的类型，请增加新的类型</sys:String>
 </ResourceDictionary>
